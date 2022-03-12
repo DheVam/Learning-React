@@ -4,6 +4,7 @@
 // example 1:
 
 import React from "react";
+import Message from "./components/alert";
 
 const element = <h1>Hello, world!</h1>;
 
@@ -12,16 +13,16 @@ const Bikes = {
   model: "Ninja",
 };
 
-const message = (msg) => {
+/* const message = (msg) => {
   return alert(msg);
-};
+}; */
 
 const Conditional = (props) => {
   const condition = props.condition;
   if (condition) {
-    return <h1>Hello there</h1>;
+    return <h1>True</h1>;
   } else {
-    return null;
+    return <h1>false</h1>;
   }
 };
 
@@ -34,10 +35,10 @@ const Example = () => {
         Hello, {Bikes.brand} {Bikes.model}!
       </h1>
       {/* passing a function as a prop */}
-      <button onClick={() => message("Hi there!")}>Message Me</button>
+      <button onClick={() => Message("Hi there!")}>Message Me</button>
 
       {/* passing a boolean as a prop,and rendering components based on condition */}
-      <Conditional condition={true}></Conditional>
+      <Conditional condition={false}></Conditional>
     </div>
   );
 };
